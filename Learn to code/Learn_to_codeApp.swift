@@ -12,6 +12,7 @@ struct Learn_to_codeApp: App {
     var body: some Scene {
         WindowGroup {
             HomeView()
+                .environmentObject(ContentModel())
         }
     }
 }
