@@ -38,13 +38,21 @@ struct HomeView: View {
 
                             ForEach(model.modules) { module in
                                 
-                                // lesson card
-                                HomeCard(image: module.content.image,
-                                         title: "Learn \(module.category)",
-                                         description: module.content.description,
-                                         count: "\(module.content.lessons.count) lessons",
-                                         time: module.content.time)
-                                
+                                NavigationLink(
+                                    destination:
+                                        ContentView()
+                                            .onAppear(perform: {
+                                                model.beginModule(module.id)
+                                            }),
+                                    label: {
+                                        // lesson card
+                                        HomeCard(image: module.content.image,
+                                                 title: "Learn \(module.category)",
+                                                 description: module.content.description,
+                                                 count: "\(module.content.lessons.count) lessons",
+                                                 time: module.content.time)
+                                    })
+
                                 // quiz card
                                 HomeCard(image: module.test.image,
                                          title: "\(module.category) Quiz",
