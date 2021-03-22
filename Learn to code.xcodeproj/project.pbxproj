@@ -21,6 +21,7 @@
 		2B895357260944EE007786E7 /* ContentDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B895356260944EE007786E7 /* ContentDetailView.swift */; };
 		2B89535B26094749007786E7 /* AVKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2B89535A26094749007786E7 /* AVKit.framework */; };
 		2B89535D260949F2007786E7 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B89535C260949F2007786E7 /* Constants.swift */; };
+		2B89536026095F4C007786E7 /* CodeTextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B89535F26095F4C007786E7 /* CodeTextView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -40,6 +41,7 @@
 		2B895356260944EE007786E7 /* ContentDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentDetailView.swift; sourceTree = "<group>"; };
 		2B89535A26094749007786E7 /* AVKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVKit.framework; path = System/Library/Frameworks/AVKit.framework; sourceTree = SDKROOT; };
 		2B89535C260949F2007786E7 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		2B89535F26095F4C007786E7 /* CodeTextView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CodeTextView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -103,6 +105,7 @@
 				2B895350260908DA007786E7 /* ContentView.swift */,
 				2B895353260932BB007786E7 /* ContentViewRow.swift */,
 				2B895356260944EE007786E7 /* ContentDetailView.swift */,
+				2B89535F26095F4C007786E7 /* CodeTextView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -225,6 +228,7 @@
 				2B895357260944EE007786E7 /* ContentDetailView.swift in Sources */,
 				2B1678E42604D6DB0061A4B3 /* ContentModel.swift in Sources */,
 				2B895354260932BB007786E7 /* ContentViewRow.swift in Sources */,
+				2B89536026095F4C007786E7 /* CodeTextView.swift in Sources */,
 				2B1678E72604D8490061A4B3 /* Models.swift in Sources */,
 				2B89534E26050E1C007786E7 /* HomeCard.swift in Sources */,
 				2B89535D260949F2007786E7 /* Constants.swift in Sources */,
