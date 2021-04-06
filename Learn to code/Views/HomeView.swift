@@ -55,12 +55,22 @@ struct HomeView: View {
                                                  time: module.content.time)
                                     })
 
-                                // quiz card
-                                HomeCard(image: module.test.image,
-                                         title: "\(module.category) Quiz",
-                                         description: module.test.description,
-                                         count: "\(module.test.questions.count) questions",
-                                         time: module.test.time)
+                                NavigationLink(
+                                    destination:
+                                        TestView()
+                                        .onAppear(perform: {
+                                            model.beginTest(module.id)
+                                        }),
+                                    tag: module.id,
+                                    selection: $model.currentTestSelected,
+                                    label: {
+                                        // quiz card
+                                        HomeCard(image: module.test.image,
+                                                 title: "\(module.category) Quiz",
+                                                 description: module.test.description,
+                                                 count: "\(module.test.questions.count) questions",
+                                                 time: module.test.time)
+                                    })
                                 
                             }
                         }
