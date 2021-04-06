@@ -35,18 +35,19 @@ struct ContentDetailView: View {
                     model.nextLesson()
                     
                 }, label: {
+                    LessonButton(label: "Next: \(model.currentModule!.content.lessons[model.currentLessonIndex + 1].title)")
+                })
+            } else {
+                // show the complete button instead
+                Button(action: {
                     
-                    ZStack {
-                        Rectangle()
-                            .frame(height: 50)
-                            .foregroundColor(Color.green)
-                            .cornerRadius(10)
-                            
-                        Text("Next: \(model.currentModule!.content.lessons[model.currentLessonIndex + 1].title)")
-                            .foregroundColor(.white)
-                            .bold()
-                    }
+                    // take the user back to the home view
+                    model.currentContentSelected = nil
                     
+                }, label: {
+                    LessonButton(label: "Complete",
+                                 color: Color.green,
+                                 foreground: Color.white)
                 })
             }
             
