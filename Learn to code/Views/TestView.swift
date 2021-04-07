@@ -79,16 +79,29 @@ struct TestView: View {
                 
                 // submit answer button
                 Button(action: {
-                    // change submitted state to true
-                    submitted = true
                     
-                    // check answer and increment counter if correct
-                    if selectedAnswerIndex == model.currentQuestion!.correctIndex {
-                        numCorrect += 1
+                    // check if answer has been submitted
+                    if submitted {
+                        // answer has already been submitted, move to next question
+                        model.nextQuestion()
+                        
+                        // reset properties
+                        submitted = false
+                        selectedAnswerIndex = -1
+                        
+                    } else {
+                        // submit the answer
+                        // change submitted state to true
+                        submitted = true
+                        
+                        // check answer and increment counter if correct
+                        if selectedAnswerIndex == model.currentQuestion!.correctIndex {
+                            numCorrect += 1
+                        }
                     }
                     
                 }, label: {
-                    LessonButton(label: submitted ? "Continue" : "Submit answer",
+                    LessonButton(label: buttonText,
                                  color: selectedAnswerIndex >= 0 ? Color.orange : Color.gray,
                                  foreground: selectedAnswerIndex >= 0 ? Color.black : Color.white)
                 })
@@ -98,6 +111,20 @@ struct TestView: View {
             }
             .navigationTitle("\(model.currentModule?.category ?? "") Quiz")
 
+        }
+    }
+    
+    var buttonText: String {
+        // check if answer has been submitted
+        if submitted {
+            if model.currentQuestionIndex + 1 == model.currentModule!.test.questions.count {
+                // this is the last question
+                return "Finish"
+            } else {
+                return "Continue"
+            }
+        } else {
+            return "Submit"
         }
     }
 }
