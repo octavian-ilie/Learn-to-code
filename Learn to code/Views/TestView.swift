@@ -112,6 +112,10 @@ struct TestView: View {
             .navigationTitle("\(model.currentModule?.category ?? "") Quiz")
 
         }
+        else {
+            // if current question is nil, show result view
+            TestResultView(numCorrect: numCorrect)
+        }
     }
     
     var buttonText: String {
