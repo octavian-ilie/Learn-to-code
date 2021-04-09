@@ -37,7 +37,12 @@ struct TestResultView: View {
     }
     
     var complimentText: String {
-        let procentage = Double(numCorrect)/Double(model.currentModule?.test.questions.count ?? 0)
+        
+        guard model.currentModule != nil else {
+            return ""
+        }
+        
+        let procentage = Double(numCorrect)/Double(model.currentModule!.test.questions.count)
         
         if procentage > 0.7 {
             return "Awesome!"
